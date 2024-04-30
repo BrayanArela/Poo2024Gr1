@@ -8,13 +8,15 @@ import pe.edu.upeu.poo.cobjeto.Persona;
 public class PrincipiosPooApplication {
 
 	public static void main(String[] args) {
-		SpringApplication.run(PrincipiosPooApplication.class, args);
-                Persona person=new Persona(); //aplicando objetos//para usar sus atributos y acciones
-                person.setNombre("Brayan");
-                person.setEdad(25);
-                person.edad=50;
-                System.out.println("yo soy "+person.getNombre()
+                SpringApplication.run(PrincipiosPooApplication.class, args);
+                Persona person=new Persona();//aplicando Objetos //para usar sus atributos y acciones
+                person.setNombre("David");
+                person.setEdad(36);
+                person.edad=38;
+                System.out.println("Yo soy "+person.getNombre()
                 +" y tengo "+person.getEdad()+" años");
                 person.saludo();
+                
 	}
+
 }

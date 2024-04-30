@@ -9,6 +9,7 @@ package pe.edu.upeu.poo.cobjeto;
  * @author Datos
  */
 public class Persona {
+
     private String nombre;
     public int edad;
 
@@ -27,9 +28,9 @@ public class Persona {
     public void setEdad(int edad) {
         this.edad = edad;
     }
-    
+
     public void saludo() {
-        System.out.println("Hola, soy "+nombre+" y mi edad es:"+edad);
-}
-  
+        System.out.println("Hola, soy " + nombre + " y mi edad es:" + edad);
+    }
+
 }

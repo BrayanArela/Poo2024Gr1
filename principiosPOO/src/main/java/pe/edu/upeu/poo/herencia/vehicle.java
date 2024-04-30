@@ -8,10 +8,12 @@ package pe.edu.upeu.poo.herencia;
  *
  * @author Datos
  */
-public class vehicle {
-    protected String marca = "Ford"; //attribute
+public class Vehicle {
+
+    protected static String marca = "Ford"; //attribute
 
     public static void sonido() {//method
         System.out.println("Tuut, tuut!");
     }
+
 }
