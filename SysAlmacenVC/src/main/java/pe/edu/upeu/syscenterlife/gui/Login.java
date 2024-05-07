@@ -81,8 +81,8 @@ public class Login extends javax.swing.JFrame {
             public void actionPerformed(ActionEvent e) {
                 if (txtUsername.getText().equals("admin")
                         && String.valueOf(txtPassword.getPassword()).equals("admin")) {
-                    //gUIMain.setContexto(ctx);
-                    //gUIMain.setVisible(true);
+                    gUIMain.setContexto(ctx);
+                    gUIMain.setVisible(true);
                     dispose();
                 } else {
                     new MsgBox("Error al ingresar!", NORMAL, "");
