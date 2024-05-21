@@ -142,21 +142,22 @@ public class GUIMain extends JFrame {
             Container contai = GUIMain.this.getContentPane();
             if (((JMenuItem) e.getSource()).getName()
                     .equals("micliente")) {
-                /*jtpane.removeAll();                System.out.println("Holas si llega");
+                jtpane.removeAll();
+                System.out.println("Holas si llega");
 
 //MainCliente mc = new MainCliente();
-MainCliente mc = ctx.getBean(MainCliente.class);
-mc.setContexto(ctx);
-mc.setPreferredSize(new Dimension(1024, 600));
-scrollPane = new JScrollPane(mc);
-scrollPane.setHorizontalScrollBarPolicy(
-JScrollPane.HORIZONTAL_SCROLLBAR_AS_NEEDED);
-scrollPane.setVerticalScrollBarPolicy(
-JScrollPane.VERTICAL_SCROLLBAR_AS_NEEDED);
-jtpane.add(scrollPane, "Cliente");
-contai.add(BorderLayout.CENTER, jtpane);
-contai.validate();
-contai.repaint();*/
+                MainCliente mc = ctx.getBean(MainCliente.class);
+                mc.setContext(ctx);
+                mc.setPreferredSize(new Dimension(1024, 600));
+                scrollPane = new JScrollPane(mc);
+                scrollPane.setHorizontalScrollBarPolicy(
+                        JScrollPane.HORIZONTAL_SCROLLBAR_AS_NEEDED);
+                scrollPane.setVerticalScrollBarPolicy(
+                        JScrollPane.VERTICAL_SCROLLBAR_AS_NEEDED);
+                jtpane.add(scrollPane, "Cliente");
+                contai.add(BorderLayout.CENTER, jtpane);
+                contai.validate();
+                contai.repaint();
             }
             if (((JMenuItem) e.getSource()).getName().equals("miareaperiodo")) {
                 System.out.println("Si llega!");
