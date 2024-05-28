@@ -1,3 +1,4 @@
+
 package pe.edu.upeu.syscenterlife.modelo;
 
 import lombok.AllArgsConstructor;
@@ -9,8 +10,6 @@ import lombok.NoArgsConstructor;
 @AllArgsConstructor
 @Builder
 @Data
-
 public class MenuMenuItenTO {
     public String menunombre, menuitemnombre, nombreObj;
-    
 }

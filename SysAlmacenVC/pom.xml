@@ -75,24 +75,21 @@
             <groupId>com.miglayout</groupId>
             <artifactId>miglayout</artifactId>
             <version>3.7.4</version>
-        </dependency>
+        </dependency> 
         <dependency>
             <groupId>com.github.davidmp</groupId>
             <artifactId>SysSwingDmp</artifactId>
             <version>v1.9</version>
         </dependency>
-   
+        
     </dependencies>
-
-    <!-- asdasdadadasdasdasdasdasdasdadasasdasdasdas -->
-
+    <!-- sdsdsd -->
     <repositories>
         <repository>
             <id>jitpack.io</id>
             <url>https://jitpack.io</url>
         </repository>
     </repositories>
-
     <build>
         <plugins>
             <plugin>
@@ -121,7 +118,6 @@
                     </archive>
                 </configuration>
             </plugin>
-
         </plugins>
     </build>
 

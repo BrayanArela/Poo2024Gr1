@@ -28,7 +28,7 @@ public class ErrorLogger {
             SimpleFormatter formatter = new SimpleFormatter();
             fileHandler.setFormatter(formatter);
         } catch (IOException exception) {
-// exception.printStackTrace();
+            // exception.printStackTrace();
             System.err.println("configure:" + exception.toString());
         }
         addCloseHandlersShutdownHook();

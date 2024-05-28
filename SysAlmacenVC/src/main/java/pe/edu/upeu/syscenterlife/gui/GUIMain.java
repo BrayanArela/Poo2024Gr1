@@ -1,3 +1,7 @@
+/*
+ * Click nbfs://nbhost/SystemFileSystem/Templates/Licenses/license-default.txt to change this license
+ * Click nbfs://nbhost/SystemFileSystem/Templates/Classes/Class.java to edit this template
+ */
 package pe.edu.upeu.syscenterlife.gui;
 
 import java.awt.BorderLayout;
@@ -21,32 +25,12 @@ import javax.swing.event.MenuListener;
 import org.springframework.context.ConfigurableApplicationContext;
 import org.springframework.stereotype.Component;
 import pe.edu.upeu.syscenterlife.modelo.MenuMenuItenTO;
-import pe.edu.upeu.syscenterlife.servicio.MenuMenuItemDao;
+import pe.edu.upeu.syscenterlife.servicio.MenuMenuItemDaoService;
 import pe.edu.upeu.syscenterlife.servicio.MenuMenuItemDaoI;
 import pe.edu.upeu.syscenterlife.util.UtilsX;
 
 @Component
-
 public class GUIMain extends JFrame {
-
-    public int[] contarMenuMunuItem(List<MenuMenuItenTO> data) {
-        int menui = 0, menuitem = 0;
-        String menuN = "";
-        for (MenuMenuItenTO mmi : data) {
-            if (!mmi.menunombre.equals(menuN)) {
-                menuN = mmi.menunombre;
-                menui++;
-            }
-            if (!mmi.menuitemnombre.equals("")) {
-                menuitem++;
-            }
-        }
-        return new int[]{menui, menuitem};
-    }
-
-    public void setContexto(ConfigurableApplicationContext ctx) {
-        this.ctx = ctx;
-    }
 
     Preferences userPrefs = Preferences.userRoot();
     JMenuBar menuBar;
@@ -61,9 +45,8 @@ public class GUIMain extends JFrame {
     ConfigurableApplicationContext ctx;
 
     public GUIMain() {
-
         myresources = util.detectLanguage(userPrefs.get("IDIOMAX", "es"));
-        mmiDao = new MenuMenuItemDao();
+        mmiDao = new MenuMenuItemDaoService();
         lista = mmiDao.listaAccesos("Root", myresources);
         int[] mmi = contarMenuMunuItem(lista);
         menu = new JMenu[mmi[0]];
@@ -112,7 +95,25 @@ public class GUIMain extends JFrame {
         jtpane = new JTabbedPane();
         this.getContentPane().add(BorderLayout.NORTH, menuBar);
         this.add(BorderLayout.CENTER, jtpane);
+    }
 
+    public int[] contarMenuMunuItem(List<MenuMenuItenTO> data) {
+        int menui = 0, menuitem = 0;
+        String menuN = "";
+        for (MenuMenuItenTO mmi : data) {
+            if (!mmi.menunombre.equals(menuN)) {
+                menuN = mmi.menunombre;
+                menui++;
+            }
+            if (!mmi.menuitemnombre.equals("")) {
+                menuitem++;
+            }
+        }
+        return new int[]{menui, menuitem};
+    }
+
+    public void setContexto(ConfigurableApplicationContext ctx) {
+        this.ctx = ctx;
     }
 
     class SampleMenuListener implements MenuListener {
@@ -142,22 +143,21 @@ public class GUIMain extends JFrame {
             Container contai = GUIMain.this.getContentPane();
             if (((JMenuItem) e.getSource()).getName()
                     .equals("micliente")) {
-                jtpane.removeAll();
                 System.out.println("Holas si llega");
-
-//MainCliente mc = new MainCliente();
-                MainCliente mc = ctx.getBean(MainCliente.class);
-                mc.setContext(ctx);
-                mc.setPreferredSize(new Dimension(1024, 600));
-                scrollPane = new JScrollPane(mc);
-                scrollPane.setHorizontalScrollBarPolicy(
-                        JScrollPane.HORIZONTAL_SCROLLBAR_AS_NEEDED);
-                scrollPane.setVerticalScrollBarPolicy(
-                        JScrollPane.VERTICAL_SCROLLBAR_AS_NEEDED);
-                jtpane.add(scrollPane, "Cliente");
-                contai.add(BorderLayout.CENTER, jtpane);
-                contai.validate();
-                contai.repaint();
+                jtpane.removeAll();
+            //MainCliente mc = new MainCliente();
+            MainCliente mc = ctx.getBean(MainCliente.class);
+            mc.setContext(ctx);
+            mc.setPreferredSize(new Dimension(1024, 600));
+            scrollPane = new JScrollPane(mc);
+            scrollPane.setHorizontalScrollBarPolicy(
+            JScrollPane.HORIZONTAL_SCROLLBAR_AS_NEEDED);
+            scrollPane.setVerticalScrollBarPolicy(
+            JScrollPane.VERTICAL_SCROLLBAR_AS_NEEDED);
+            jtpane.add(scrollPane, "Cliente");
+            contai.add(BorderLayout.CENTER, jtpane);
+            contai.validate();
+            contai.repaint();
             }
             if (((JMenuItem) e.getSource()).getName().equals("miareaperiodo")) {
                 System.out.println("Si llega!");
