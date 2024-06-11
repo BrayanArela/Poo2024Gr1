@@ -13,4 +13,6 @@ public interface VentCarritoRepository extends JpaRepository<VentCarrito, Long> 
     @Query(value = "SELECT c.* FROM vent_carrito c WHERE c.dniruc=:dniruc", nativeQuery = true)
     List<VentCarrito> listaCarritoCliente(@Param("dniruc") String dniruc);
 
+    void deleteByDniruc(/*@Param("dniruc")*/String dniruc);
+
 }
