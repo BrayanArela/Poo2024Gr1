@@ -37,11 +37,11 @@ public class MainCliente extends javax.swing.JPanel {
         for (TIPOCLXIENTE myVar : TIPOCLXIENTE.values()) {
             cbxTipo.addItem(myVar.toString());
         }
-        
+
     }
-    
-    public void setContext(ConfigurableApplicationContext ctx){
-        this.ctx=ctx;
+
+    public void setContext(ConfigurableApplicationContext ctx) {
+        this.ctx = ctx;
         listarClientes();
         usuarioLogin.setText(SessionManager.getInstance().getUsuarioNombre());
     }
@@ -129,6 +129,11 @@ public class MainCliente extends javax.swing.JPanel {
 
         jLabel5.setText("Buscar Dato Cliente");
 
+        txtBuscar.addActionListener(new java.awt.event.ActionListener() {
+            public void actionPerformed(java.awt.event.ActionEvent evt) {
+                txtBuscarActionPerformed(evt);
+            }
+        });
         txtBuscar.addKeyListener(new java.awt.event.KeyAdapter() {
             public void keyTyped(java.awt.event.KeyEvent evt) {
                 txtBuscarKeyTyped(evt);
@@ -138,6 +143,11 @@ public class MainCliente extends javax.swing.JPanel {
         jLabel6.setText("Exportar");
 
         btnPdf.setText("PDF");
+        btnPdf.addActionListener(new java.awt.event.ActionListener() {
+            public void actionPerformed(java.awt.event.ActionEvent evt) {
+                btnPdfActionPerformed(evt);
+            }
+        });
 
         btnExcel.setText("Excel");
 
@@ -237,11 +247,22 @@ public class MainCliente extends javax.swing.JPanel {
 
         jLabel2.setText("DNI/RUC:");
 
+        txtDni.addActionListener(new java.awt.event.ActionListener() {
+            public void actionPerformed(java.awt.event.ActionEvent evt) {
+                txtDniActionPerformed(evt);
+            }
+        });
+
         jLabel3.setText("Nombre:");
 
         jLabel4.setText("T.Doc:");
 
         cbxTipo.setModel(new javax.swing.DefaultComboBoxModel<>(new String[] { "Seleccione" }));
+        cbxTipo.addActionListener(new java.awt.event.ActionListener() {
+            public void actionPerformed(java.awt.event.ActionEvent evt) {
+                cbxTipoActionPerformed(evt);
+            }
+        });
 
         javax.swing.GroupLayout jPanel3Layout = new javax.swing.GroupLayout(jPanel3);
         jPanel3.setLayout(jPanel3Layout);
@@ -444,6 +465,22 @@ public class MainCliente extends javax.swing.JPanel {
         trsfiltro = new TableRowSorter<>(jTable1.getModel());
         jTable1.setRowSorter(trsfiltro);
     }//GEN-LAST:event_txtBuscarKeyTyped
+
+    private void btnPdfActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_btnPdfActionPerformed
+        // TODO add your handling code here:
+    }//GEN-LAST:event_btnPdfActionPerformed
+
+    private void txtBuscarActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_txtBuscarActionPerformed
+        // TODO add your handling code here:
+    }//GEN-LAST:event_txtBuscarActionPerformed
+
+    private void txtDniActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_txtDniActionPerformed
+        // TODO add your handling code here:
+    }//GEN-LAST:event_txtDniActionPerformed
+
+    private void cbxTipoActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_cbxTipoActionPerformed
+        // TODO add your handling code here:
+    }//GEN-LAST:event_cbxTipoActionPerformed
 
 
     // Variables declaration - do not modify//GEN-BEGIN:variables
