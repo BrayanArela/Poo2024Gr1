@@ -11,27 +11,27 @@ public class ProveedorService {
     @Autowired
     ProveedorRepository repository;
     
-    //C
+    // Crear
     public Proveedor guardarEntidad(Proveedor proveedor){
         return repository.save(proveedor);
     }
     
-    //R
+    // Leer todos los elementos
     public List<Proveedor> listarEntidad(){
         return repository.findAll();
     }
     
-    //U
+    // Actualizar
     public Proveedor actualizarEntidad(Proveedor proveedor){
         return repository.save(proveedor);
     }
     
-    //D
+    // Eliminar
     public void eliminarEntidad(Long id){
         repository.deleteById(id);
     }
     
-    //B
+    // Buscar por ID
     public Proveedor buscarEntidad(Long id){
         return repository.findById(id).orElse(null);
     }

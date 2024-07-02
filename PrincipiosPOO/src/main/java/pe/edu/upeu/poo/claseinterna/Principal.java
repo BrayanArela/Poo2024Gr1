@@ -1,6 +1,5 @@
 package pe.edu.upeu.poo.claseinterna;
 
-
 public class Principal {
     public static void main(String[] args) {
         Mama objM=new Mama();
@@ -8,5 +7,4 @@ public class Principal {
         Mama.Bebe bb=objM.new Bebe();
         bb.moverse();
     }
-    
 }

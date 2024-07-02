@@ -11,27 +11,27 @@ public class UnidMedidaService {
     @Autowired
     UnidMedidaRepository repository;
     
-    //C
+    // Crear
     public UnidMedida guardarEntidad(UnidMedida unidMedida){
         return repository.save(unidMedida);
     }
     
-    //R
+    // Leer todos los elementos
     public List<UnidMedida> listarEntidad(){
         return repository.findAll();
     }
     
-    //U
+    // Actualizar
     public UnidMedida actualizarEntidad(UnidMedida unidMedida){
         return repository.save(unidMedida);
     }
     
-    //D
+    // Eliminar
     public void eliminarEntidad(Long id){
         repository.deleteById(id);
     }
     
-    //B
+    // Buscar por ID
     public UnidMedida buscarEntidad(Long id){
         return repository.findById(id).orElse(null);
     }

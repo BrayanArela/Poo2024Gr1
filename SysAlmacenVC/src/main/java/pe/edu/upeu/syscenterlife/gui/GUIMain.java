@@ -25,7 +25,7 @@ import javax.swing.event.MenuListener;
 import org.springframework.context.ConfigurableApplicationContext;
 import org.springframework.stereotype.Component;
 import pe.edu.upeu.syscenterlife.modelo.MenuMenuItenTO;
-import pe.edu.upeu.syscenterlife.servicio.MenuMenuItemDaoService;
+import pe.edu.upeu.syscenterlife.servicio.MenuMenuItemDao;
 import pe.edu.upeu.syscenterlife.servicio.MenuMenuItemDaoI;
 import pe.edu.upeu.syscenterlife.util.UtilsX;
 
@@ -46,7 +46,7 @@ public class GUIMain extends JFrame {
 
     public GUIMain() {
         myresources = util.detectLanguage(userPrefs.get("IDIOMAX", "es"));
-        mmiDao = new MenuMenuItemDaoService();
+        mmiDao = new MenuMenuItemDao();
         lista = mmiDao.listaAccesos("Root", myresources);
         int[] mmi = contarMenuMunuItem(lista);
         menu = new JMenu[mmi[0]];

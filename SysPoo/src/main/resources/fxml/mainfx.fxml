@@ -1,0 +1,30 @@
+<?xml version="1.0" encoding="UTF-8"?>
+
+<?import javafx.geometry.*?>
+<?import javafx.scene.control.*?>
+<?import javafx.scene.layout.*?>
+
+<BorderPane xmlns="http://javafx.com/javafx/17.0.2-ea" xmlns:fx="http://javafx.com/fxml/1" fx:controller="pe.edu.upeu.poo.controller.RegistroController">
+    <center>
+        <VBox>
+
+           <Label text="Nombre" />
+           <TextField fx:id="nombreField" />
+           <Label text="DNI" />
+           <TextField fx:id="dniField" />
+           <Button onAction="#registrar" text="Registrar" />
+         <padding>
+            <Insets left="10.0" right="10.0" />
+         </padding>
+
+       </VBox>
+    </center>
+   <top>
+      <ToolBar prefHeight="40.0" prefWidth="200.0" BorderPane.alignment="CENTER">
+        <items>
+          <Button mnemonicParsing="false" text="Archivo" />
+            <Button mnemonicParsing="false" text="Editar" />
+        </items>
+      </ToolBar>
+   </top>
+</BorderPane>

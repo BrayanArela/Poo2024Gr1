@@ -11,27 +11,27 @@ public class CompraService {
     @Autowired
     CompraRepository repository;
     
-    //C
+    // Crear
     public Compra guardarEntidad(Compra compra){
         return repository.save(compra);
     }
     
-    //R
+    // Leer todos los elementos
     public List<Compra> listarEntidad(){
         return repository.findAll();
     }
     
-    //U
+    // Actualizar
     public Compra actualizarEntidad(Compra compra){
         return repository.save(compra);
     }
     
-    //D
+    // Eliminar
     public void eliminarEntidad(Long id){
         repository.deleteById(id);
     }
     
-    //B
+    // Buscar por ID
     public Compra buscarEntidad(Long id){
         return repository.findById(id).orElse(null);
     }

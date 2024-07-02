@@ -11,27 +11,27 @@ public class EmisorService {
     @Autowired
     EmisorRepository repository;
     
-    //C
+    // Crear
     public Emisor guardarEntidad(Emisor emisor){
         return repository.save(emisor);
     }
     
-    //R
+    // Leer todos los elementos
     public List<Emisor> listarEntidad(){
         return repository.findAll();
     }
     
-    //U
+    // Actualizar
     public Emisor actualizarEntidad(Emisor emisor){
         return repository.save(emisor);
     }
     
-    //D
+    // Eliminar
     public void eliminarEntidad(Long id){
         repository.deleteById(id);
     }
     
-    //B
+    // Buscar por ID
     public Emisor buscarEntidad(Long id){
         return repository.findById(id).orElse(null);
     }

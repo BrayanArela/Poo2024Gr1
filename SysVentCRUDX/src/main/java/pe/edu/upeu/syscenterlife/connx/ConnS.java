@@ -8,7 +8,8 @@ import java.sql.SQLException;
 import java.util.logging.Level;
 import java.util.logging.Logger;
 
-public class ConnS { //el costructor se reconoce por que no retorna naaaaada
+
+public class ConnS {
 
     private static volatile ConnS instance;
     private static volatile Connection connection;
@@ -17,7 +18,7 @@ public class ConnS { //el costructor se reconoce por que no retorna naaaaada
     private ConnS() {
         try {
             Class.forName("org.sqlite.JDBC");
-//Class.forName("com.mysql.cj.jdbc.Driver");
+            //Class.forName("com.mysql.cj.jdbc.Driver");
         } catch (ClassNotFoundException ex) {
             Logger.getLogger(ConnS.class.getName()).log(Level.SEVERE,
                     null, ex);
@@ -48,11 +49,11 @@ public class ConnS { //el costructor se reconoce por que no retorna naaaaada
             synchronized (ConnS.class) {
                 if (connection == null) {
                     try {
-                        //String dbUrl= "jdbc:sqlite:data/db_ventas.db?foreign_keys=on;";
-                        String dbUrl
-                                = "jdbc:sqlite:" + util.getFileExterno("data",
+                        //String dbUrl="jdbc:sqlite:data/db_ventas.db?foreign_keys=on;";
+                        String dbUrl= "jdbc:sqlite:" + util.getFileExterno("data",
                                         "clientedb.db").getAbsolutePath() + "?foreign_keys=on;";
-                        //String dbUrl= "jdbc:sqlite:" + getFile("admision_db.db").getAbsolutePath() + "?foreign_keys=on;";
+                        //String dbUrl="jdbc:sqlite:"+getFile("admision_db.db").getAbsolutePath()+"?foreign_keys=on;"
+                        ;
                         connection = DriverManager.getConnection(dbUrl);
                         System.out.println("Conecto exitosamente");
                     } catch (SQLException e) {
@@ -70,15 +71,13 @@ public class ConnS { //el costructor se reconoce por que no retorna naaaaada
         PreparedStatement ps;
         ResultSet rs = null;
         try {
-            ps=connection.prepareStatement("SELECT * from cliente ");
+            ps=connection.prepareStatement("SELECT  * from cliente ");
             rs=ps.executeQuery();
-            while (rs.next()) {
-                System.out.println(rs.getString("dniruc") + "\t"
-                        + rs.getString("nombre"));
+            while (rs.next()) {                
+                System.out.println(rs.getString("dniruc")+"\t"
+                        +rs.getString("nombre"));
             }
-
         } catch (Exception e) {
-        }
-
+        }   
     }
 }

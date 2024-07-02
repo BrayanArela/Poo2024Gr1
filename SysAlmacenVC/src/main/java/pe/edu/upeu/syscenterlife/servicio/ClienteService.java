@@ -15,7 +15,8 @@ public class ClienteService {
 
     @Autowired
     ClienteRepository repository;
-    ErrorLogger log=new ErrorLogger("cliente service");
+    
+    ErrorLogger log=new ErrorLogger("ClienteService");
 
     //C
     public Cliente guardarEntidad(Cliente cliente) {

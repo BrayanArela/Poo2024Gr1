@@ -21,7 +21,7 @@ public class GUIMain extends JFrame {
         this.setSize(new Dimension(screenSize.width, (screenSize.height)
                 - 36));
         MainCliente mc = new MainCliente();
-        //mc.setContexto(ctx);
+//mc.setContexto(ctx);
         mc.setPreferredSize(new Dimension(1024, 600));
         jtpane = new JTabbedPane();
         jtpane.setName("Cliente");

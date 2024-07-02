@@ -1,4 +1,3 @@
-
 package pe.edu.upeu.syscenterlife.servicio;
 
 import java.util.List;
@@ -12,27 +11,27 @@ public class MarcaService {
     @Autowired
     MarcaRepository repository;
     
-    //C
+    // Crear
     public Marca guardarEntidad(Marca marca){
         return repository.save(marca);
     }
     
-    //R
+    // Leer todos los elementos
     public List<Marca> listarEntidad(){
         return repository.findAll();
     }
     
-    //U
+    // Actualizar
     public Marca actualizarEntidad(Marca marca){
         return repository.save(marca);
     }
     
-    //D
+    // Eliminar
     public void eliminarEntidad(Long id){
         repository.deleteById(id);
     }
     
-    //B
+    // Buscar por ID
     public Marca buscarEntidad(Long id){
         return repository.findById(id).orElse(null);
     }

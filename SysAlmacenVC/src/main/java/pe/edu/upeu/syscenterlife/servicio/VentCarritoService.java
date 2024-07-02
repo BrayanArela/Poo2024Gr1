@@ -13,32 +13,32 @@ public class VentCarritoService {
     @Autowired
     VentCarritoRepository repository;
 
-    //C
+    // Crear
     public VentCarrito guardarEntidad(VentCarrito ventCarrito) {
         return repository.save(ventCarrito);
     }
 
-    //R
+    // Leer todos los elementos
     public List<VentCarrito> listarEntidad() {
         return repository.findAll();
     }
 
-    //U
+    // Actualizar
     public VentCarrito actualizarEntidad(VentCarrito ventCarrito) {
         return repository.save(ventCarrito);
     }
 
-    //D
+    // Eliminar
     public void eliminarEntidad(Long id) {
         repository.deleteById(id);
     }
 
-    //B
+    // Buscar por ID
     public VentCarrito buscarEntidad(Long id) {
         return repository.findById(id).orElse(null);
     }
 
-    //Buscar por DNI/RUC
+    // Buscar por DNI/RUC
     public List<VentCarrito> listaCarritoCliente(String dni) {
         return repository.listaCarritoCliente(dni);
     }

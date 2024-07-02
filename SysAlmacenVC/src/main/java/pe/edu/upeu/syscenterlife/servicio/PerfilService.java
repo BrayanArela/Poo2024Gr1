@@ -11,27 +11,27 @@ public class PerfilService {
     @Autowired
     PerfilRepository repository;
     
-    //C
+    // Crear
     public Perfil guardarEntidad(Perfil perfil){
         return repository.save(perfil);
     }
     
-    //R
+    // Leer todos los elementos
     public List<Perfil> listarEntidad(){
         return repository.findAll();
     }
     
-    //U
+    // Actualizar
     public Perfil actualizarEntidad(Perfil perfil){
         return repository.save(perfil);
     }
     
-    //D
+    // Eliminar
     public void eliminarEntidad(Long id){
         repository.deleteById(id);
     }
     
-    //B
+    // Buscar por ID
     public Perfil buscarEntidad(Long id){
         return repository.findById(id).orElse(null);
     }

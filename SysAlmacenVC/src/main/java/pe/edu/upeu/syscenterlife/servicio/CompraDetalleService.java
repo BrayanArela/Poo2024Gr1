@@ -8,32 +8,31 @@ import pe.edu.upeu.syscenterlife.repositorio.CompraDetalleRepository;
 
 @Service
 public class CompraDetalleService {
-
     @Autowired
     CompraDetalleRepository repository;
-
-    //C
-    public CompraDetalle guardarEntidad(CompraDetalle compraDetalle) {
+    
+    // Crear
+    public CompraDetalle guardarEntidad(CompraDetalle compraDetalle){
         return repository.save(compraDetalle);
     }
-
-    //R
-    public List<CompraDetalle> listarEntidad() {
+    
+    // Leer todos los elementos
+    public List<CompraDetalle> listarEntidad(){
         return repository.findAll();
     }
-
-    //U
-    public CompraDetalle actualizarEntidad(CompraDetalle compraDetalle) {
+    
+    // Actualizar
+    public CompraDetalle actualizarEntidad(CompraDetalle compraDetalle){
         return repository.save(compraDetalle);
     }
-
-    //D
-    public void eliminarEntidad(Long id) {
+    
+    // Eliminar
+    public void eliminarEntidad(Long id){
         repository.deleteById(id);
     }
-
-    //B
-    public CompraDetalle buscarEntidad(Long id) {
+    
+    // Buscar por ID
+    public CompraDetalle buscarEntidad(Long id){
         return repository.findById(id).orElse(null);
     }
 }

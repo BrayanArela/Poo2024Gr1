@@ -11,27 +11,27 @@ public class VentaDetalleService {
     @Autowired
     VentaDetalleRepository repository;
     
-    //C
+    // Crear
     public VentaDetalle guardarEntidad(VentaDetalle ventaDetalle){
         return repository.save(ventaDetalle);
     }
     
-    //R
+    // Leer todos los elementos
     public List<VentaDetalle> listarEntidad(){
         return repository.findAll();
     }
     
-    //U
+    // Actualizar
     public VentaDetalle actualizarEntidad(VentaDetalle ventaDetalle){
         return repository.save(ventaDetalle);
     }
     
-    //D
+    // Eliminar
     public void eliminarEntidad(Long id){
         repository.deleteById(id);
     }
     
-    //B
+    // Buscar por ID
     public VentaDetalle buscarEntidad(Long id){
         return repository.findById(id).orElse(null);
     }

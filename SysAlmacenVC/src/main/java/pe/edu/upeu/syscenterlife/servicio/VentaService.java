@@ -28,27 +28,27 @@ public class VentaService {
     @Autowired
     private DataSource dataSource;
 
-    //C
+    // Crear
     public Venta guardarEntidad(Venta venta) {
         return repository.save(venta);
     }
 
-    //R
+    // Leer todos los elementos
     public List<Venta> listarEntidad() {
         return repository.findAll();
     }
 
-    //U
+    // Actualizar
     public Venta actualizarEntidad(Venta venta) {
         return repository.save(venta);
     }
 
-    //D
+    // Eliminar
     public void eliminarEntidad(Long id) {
         repository.deleteById(id);
     }
 
-    //B
+    // Buscar por ID
     public Venta buscarEntidad(Long id) {
         return repository.findById(id).orElse(null);
     }
@@ -56,13 +56,13 @@ public class VentaService {
     public File getFile(String filex) {
         File newFolder = new File("jasper");
         String ruta = newFolder.getAbsolutePath();
-        //CAMINO = Paths.get(ruta+"/"+"reporte1.jrxml"); 
+        //CAMINO = Paths.get(ruta+"/"+"reporte1.jrxml");
         Path CAMINO = Paths.get(ruta + "/" + filex);
         System.out.println("Llegasss Ruta 2:" + CAMINO.toFile().getAbsolutePath());
         return CAMINO.toFile();
     }
 
-    public void runReport1(long idv) {
+    public void runReport1(Long idv) {
         try {
             // Verificar si la venta existe
             if (!repository.existsById(idv)) {

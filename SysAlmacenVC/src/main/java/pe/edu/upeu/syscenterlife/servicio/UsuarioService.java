@@ -11,31 +11,32 @@ public class UsuarioService {
     @Autowired
     UsuarioRepository repository;
     
-    //C
+    // Crear
     public Usuario guardarEntidad(Usuario usuario){
         return repository.save(usuario);
     }
     
-    //R
+    // Leer todos los elementos
     public List<Usuario> listarEntidad(){
         return repository.findAll();
     }
     
-    //U
+    // Actualizar
     public Usuario actualizarEntidad(Usuario usuario){
         return repository.save(usuario);
     }
     
-    //D
+    // Eliminar
     public void eliminarEntidad(Long id){
         repository.deleteById(id);
     }
     
-    //B
+    // Buscar por ID
     public Usuario buscarEntidad(Long id){
         return repository.findById(id).orElse(null);
     }
-    public Usuario looginUsuario(String user, String clave){
+    
+    public Usuario loginUsuario(String user, String clave){
         return repository.loginUsuario(user, clave);
     }
 }

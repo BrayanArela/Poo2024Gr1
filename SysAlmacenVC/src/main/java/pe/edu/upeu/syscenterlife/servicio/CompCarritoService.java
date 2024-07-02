@@ -6,33 +6,32 @@ import org.springframework.stereotype.Service;
 import pe.edu.upeu.syscenterlife.modelo.CompCarrito;
 import pe.edu.upeu.syscenterlife.repositorio.CompCarritoRepository;
 
-
 @Service
 public class CompCarritoService {
     @Autowired
     CompCarritoRepository repository;
     
-    //C
+    // Crear
     public CompCarrito guardarEntidad(CompCarrito compCarrito){
         return repository.save(compCarrito);
     }
     
-    //R
+    // Leer todos los elementos
     public List<CompCarrito> listarEntidad(){
         return repository.findAll();
     }
     
-    //U
+    // Actualizar
     public CompCarrito actualizarEntidad(CompCarrito compCarrito){
         return repository.save(compCarrito);
     }
     
-    //D
+    // Eliminar
     public void eliminarEntidad(Long id){
         repository.deleteById(id);
     }
     
-    //B
+    // Buscar por ID
     public CompCarrito buscarEntidad(Long id){
         return repository.findById(id).orElse(null);
     }

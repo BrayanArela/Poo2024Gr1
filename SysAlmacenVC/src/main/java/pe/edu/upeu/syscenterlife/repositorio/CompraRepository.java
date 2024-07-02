@@ -1,4 +1,3 @@
-
 package pe.edu.upeu.syscenterlife.repositorio;
 
 import org.springframework.data.jpa.repository.JpaRepository;
